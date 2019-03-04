@@ -5,7 +5,6 @@ import styled from 'react-emotion';
 import { Flex } from 'grid-emotion';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
-import GridItem from '../components/GridItem';
 import BeTheHero from '../images/be_the_hero.svg';
 import DataReport from '../images/data_report.svg';
 import MayTheForce from '../images/may_the_force.svg';
@@ -138,33 +137,22 @@ const Contact = styled(Wrapper)`
   }
 `;
 
-const IndexPage = ({
-  data: {
-    caseStudies: { edges },
-  },
-}) => (
+const IndexPage = ({}) => (
   <Layout>
     <Header>
-      <Logo>Bella Inc.</Logo>
+      <Logo>trumptweets.rest</Logo>
       <Hero justifyContent="center" alignItems="center" flexDirection="column">
         <h1>
-          We design and develop <br /> noice web applications.
+          A Yuge REST API for POTUS45's Tweets.
         </h1>
-        <h3>Hi, Bella Inc., the human form of the 💯 Emoji.</h3>
+        <h3>Sourced from and inspired by:
+          <br/>
+          <a href="http://www.trumptwitterarchive.com">
+            trumptwitterarchive.com
+          </a>
+        </h3>
       </Hero>
     </Header>
-    <Wrapper p={4} mb={[4, 4, 7]} mx="auto" justifyContent="space-between" flexWrap="wrap">
-      {edges.map(c => (
-        <GridItem
-          uid={c.node.uid}
-          key={c.node.uid}
-          image={c.node.data.header_image.localFile.childImageSharp.fluid}
-          alt={c.node.data.title.text}
-          title={c.node.data.title.text}
-          subtitle={c.node.data.subtitle.text}
-        />
-      ))}
-    </Wrapper>
     <PrimaryBG>
       <Wrapper flexDirection="column" p={4} mx="auto">
         <Flex w={1} py={5} justifyContent="space-between" flexWrap="wrap">
@@ -234,44 +222,40 @@ const IndexPage = ({
 export default IndexPage;
 
 IndexPage.propTypes = {
-  data: PropTypes.shape({
-    caseStudies: PropTypes.shape({
-      edges: PropTypes.array.isRequired,
-    }),
-  }).isRequired,
+
 };
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    caseStudies: allPrismicCaseStudy(sort: { fields: [last_publication_date], order: DESC }) {
-      edges {
-        node {
-          uid
-          data {
-            header_image {
-              localFile {
-                childImageSharp {
-                  fluid(
-                    maxWidth: 900
-                    maxHeight: 900
-                    quality: 90
-                    traceSVG: { color: "#021212" }
-                    cropFocus: ENTROPY
-                  ) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
-                }
-              }
-            }
-            title {
-              text
-            }
-            subtitle {
-              text
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     caseStudies: allPrismicCaseStudy(sort: { fields: [last_publication_date], order: DESC }) {
+//       edges {
+//         node {
+//           uid
+//           data {
+//             header_image {
+//               localFile {
+//                 childImageSharp {
+//                   fluid(
+//                     maxWidth: 900
+//                     maxHeight: 900
+//                     quality: 90
+//                     traceSVG: { color: "#021212" }
+//                     cropFocus: ENTROPY
+//                   ) {
+//                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
+//                   }
+//                 }
+//               }
+//             }
+//             title {
+//               text
+//             }
+//             subtitle {
+//               text
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
