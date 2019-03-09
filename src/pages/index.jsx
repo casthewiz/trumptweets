@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'react-emotion';
 import { Flex } from 'grid-emotion';
-import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import BeTheHero from '../images/be_the_hero.svg';
 import DataReport from '../images/data_report.svg';
@@ -153,69 +152,10 @@ const IndexPage = ({}) => (
         </h3>
       </Hero>
     </Header>
-    <PrimaryBG>
-      <Wrapper flexDirection="column" p={4} mx="auto">
-        <Flex w={1} py={5} justifyContent="space-between" flexWrap="wrap">
-          <ServiceImage>
-            <img src={BeTheHero} alt="Be The Hero" />
-          </ServiceImage>
-          <ServiceText>
-            <h2>Be your own hero</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-              ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is
-              a paradisematic country, in which roasted parts of sentences fly into your mouth.
-            </p>
-            <ul>
-              <li>Service Super</li>
-              <li>Great Offer</li>
-              <li>Item Wrap</li>
-            </ul>
-          </ServiceText>
-        </Flex>
-        <Flex w={1} py={5} justifyContent="space-between" flexDirection="row-reverse" flexWrap="wrap">
-          <ServiceImage>
-            <img src={DataReport} alt="Data Report" />
-          </ServiceImage>
-          <ServiceText>
-            <h2>We love charts!</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-              ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
-            </p>
-            <ul>
-              <li>Service Super</li>
-              <li>Great Offer</li>
-              <li>Item Wrap</li>
-            </ul>
-          </ServiceText>
-        </Flex>
-        <Flex w={1} py={5} justifyContent="space-between" flexWrap="wrap">
-          <ServiceImage>
-            <img src={MayTheForce} alt="May the Force" />
-          </ServiceImage>
-          <ServiceText>
-            <h2>May the force be with you</h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-              ocean.
-            </p>
-            <ul>
-              <li>Service Super</li>
-              <li>Great Offer</li>
-            </ul>
-          </ServiceText>
-        </Flex>
-      </Wrapper>
-    </PrimaryBG>
     <Contact px={4} py={6} justifyContent="center" alignItems="center" flexDirection="column">
       <h1>Say hi!</h1>
       <h3>contact@domain.com</h3>
     </Contact>
-    <Footer />
   </Layout>
 );
 

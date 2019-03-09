@@ -38,15 +38,17 @@
     "gatsby",
     "gatsby-starter",
     "gatsby-starter-portfolio",
-    "lekoarts",
-    "prismic"
+    "lekoarts"
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop -o",
-    "build": "gatsby build",
-    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore"
+    "develop": "gatsby develop",
+    "start": "run-p start:**",
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/lambda",
+    "build": "npm run build:lambda; npm run build:app",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build functions"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

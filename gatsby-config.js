@@ -15,17 +15,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-source-prismic',
-      options: {
-        repositoryName: 'gatsby-starter-portfolio-bella',
-        accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => doc => `/${doc.uid}`,
-        htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
-          // Your HTML serializer
-        },
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-lodash',

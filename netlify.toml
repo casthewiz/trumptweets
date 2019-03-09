@@ -1,2 +1,7 @@
 [build]
   functions = "api"
+[[redirects]]
+  from = "/api"
+  to = "/.netlify/functions/tweets"
+  status = 200
+  force = false
