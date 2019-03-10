@@ -136,6 +136,10 @@ const Contact = styled(Wrapper)`
   }
 `;
 
+const Sample = styled(Wrapper)`
+  margin: 0 auto;
+`;
+
 const IndexPage = ({}) => (
   <Layout>
     <Header>
@@ -164,38 +168,3 @@ export default IndexPage;
 IndexPage.propTypes = {
 
 };
-
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     caseStudies: allPrismicCaseStudy(sort: { fields: [last_publication_date], order: DESC }) {
-//       edges {
-//         node {
-//           uid
-//           data {
-//             header_image {
-//               localFile {
-//                 childImageSharp {
-//                   fluid(
-//                     maxWidth: 900
-//                     maxHeight: 900
-//                     quality: 90
-//                     traceSVG: { color: "#021212" }
-//                     cropFocus: ENTROPY
-//                   ) {
-//                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
-//                   }
-//                 }
-//               }
-//             }
-//             title {
-//               text
-//             }
-//             subtitle {
-//               text
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
