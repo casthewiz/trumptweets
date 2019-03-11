@@ -174,8 +174,7 @@ const IndexPage = ({}) => (
       </Hero>
     </Header>
     <Contact px={4} py={6} justifyContent="center" alignItems="center" flexDirection="column">
-      <h1>Say hi!</h1>
-      <h3>contact@domain.com</h3>
+      <h3><a href="github.com/casthewiz">github.com/casthewiz</a></h3>
     </Contact>
   </Layout>
 );
