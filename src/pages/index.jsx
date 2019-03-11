@@ -174,7 +174,8 @@ const IndexPage = ({}) => (
       </Hero>
     </Header>
     <Contact px={4} py={6} justifyContent="center" alignItems="center" flexDirection="column">
-      <h3><a href="github.com/casthewiz">github.com/casthewiz</a></h3>
+      <h2>Have feedback? Raise an issue at: </h2>
+      <h3><a href="https://github.com/casthewiz/trumptweets">github.com/casthewiz/trumptweets</a></h3>
     </Contact>
   </Layout>
 );
