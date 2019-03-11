@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import BeTheHero from '../images/be_the_hero.svg';
 import DataReport from '../images/data_report.svg';
 import MayTheForce from '../images/may_the_force.svg';
-
+import Trump from '../images/trump.svg'
 const Header = styled.header`
   width: 100%;
   height: 900px;
@@ -40,6 +40,18 @@ const Hero = styled(Flex)`
     margin-top: 2rem;
     font-size: 1.85rem;
     font-weight: 400;
+  }
+  .kanye-rest {
+    font-family: ${props => props.theme.fontFamily.kanye};
+    font-weight: bold;
+  }
+  .trump-twitter-archive {
+    font-family: ${props => props.theme.fontFamily.archive};
+    font-weight: bold;
+  }
+  .hero-img {
+    width: 300px;
+    height: 300px;
   }
   @media (max-width: ${props => props.theme.breakpoint.m}) {
     h1 {
@@ -143,15 +155,20 @@ const Sample = styled(Wrapper)`
 const IndexPage = ({}) => (
   <Layout>
     <Header>
-      <Logo>trumptweets.rest</Logo>
       <Hero justifyContent="center" alignItems="center" flexDirection="column">
-        <h1>
-          A Yuge REST API for POTUS45's Tweets.
-        </h1>
-        <h3>Sourced from and inspired by:
+        <img class="hero-img" src={Trump} alt="Trump tweets served simply."/>
+        <h2>
+          A yuge endpoint for random @realDonaldTrump tweets.
+        </h2>
+        <h3>Sourced from:
           <br/>
-          <a href="http://www.trumptwitterarchive.com">
-            trumptwitterarchive.com
+          <a class='trump-twitter-archive' href="http://www.trumptwitterarchive.com">
+            Trump Twitter Archive
+          </a>
+        </h3>
+        <h3>Inspired by:
+          <a class='kanye-rest' href="http://kanye.rest">
+            &nbsp;kanye.rest
           </a>
         </h3>
       </Hero>

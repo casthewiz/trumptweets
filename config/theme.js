@@ -1,6 +1,6 @@
 const theme = {
   colors: {
-    primary: '#b710a1',
+    primary: '#000',
     primaryLight: '#e456e9',
     primaryDark: '#3d0435',
     bg: '#fff',
@@ -13,6 +13,8 @@ const theme = {
   fontFamily: {
     body: `'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
     heading: `'Bree Serif', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+    kanye: `'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace`,
+    archive: `'Mukta Vaani', sans-serif;`
   },
   maxWidth: '1800px',
   maxWidthText: '1000px',
