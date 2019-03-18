@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import styled from 'react-emotion';
 import { Flex } from 'grid-emotion';
 import Layout from '../components/Layout';
+import TweetAPIExample from '../components/Tweet'
 import BeTheHero from '../images/be_the_hero.svg';
 import DataReport from '../images/data_report.svg';
 import MayTheForce from '../images/may_the_force.svg';
@@ -12,9 +13,9 @@ const Header = styled.header`
   width: 100%;
   height: 900px;
   position: relative;
-  padding: 1.75rem;
+  padding: 1.5rem;
   @media (max-width: ${props => props.theme.breakpoint.s}) {
-    height: 700px;
+    height: 900px;
   }
 `;
 
@@ -24,7 +25,7 @@ const Logo = styled.h2`
   left: 0;
   right: 0;
   text-align: center;
-  padding: 0 1.75rem;
+  padding: 0 1.5rem;
   margin-top: 50px;
 `;
 
@@ -40,14 +41,6 @@ const Hero = styled(Flex)`
     margin-top: 2rem;
     font-size: 1.85rem;
     font-weight: 400;
-  }
-  .kanye-rest {
-    font-family: ${props => props.theme.fontFamily.kanye};
-    font-weight: bold;
-  }
-  .trump-twitter-archive {
-    font-family: ${props => props.theme.fontFamily.archive};
-    font-weight: bold;
   }
   .hero-img {
     width: 300px;
@@ -143,6 +136,14 @@ const Contact = styled(Wrapper)`
     font-size: 1.85rem;
     font-weight: 400;
   }
+  .kanye-rest {
+    font-family: ${props => props.theme.fontFamily.kanye};
+    font-weight: bold;
+  }
+  .trump-twitter-archive {
+    font-family: ${props => props.theme.fontFamily.archive};
+    font-weight: bold;
+  }
   @media (max-width: ${props => props.theme.breakpoint.m}) {
     font-size: 1.5rem;
   }
@@ -156,26 +157,27 @@ const IndexPage = ({}) => (
   <Layout>
     <Header>
       <Hero justifyContent="center" alignItems="center" flexDirection="column">
-        <img class="hero-img" src={Trump} alt="Trump tweets served simply."/>
+        <img className="hero-img" src={Trump} alt="Trump tweets served simply."/>
         <h2>
           A yuge endpoint for random @realDonaldTrump tweets.
         </h2>
-        <h3>Sourced from:
-          <br/>
-          <a class='trump-twitter-archive' href="http://www.trumptwitterarchive.com">
-            Trump Twitter Archive
-          </a>
-        </h3>
-        <h3>Inspired by:
-          <a class='kanye-rest' href="http://kanye.rest">
-            &nbsp;kanye.rest
-          </a>
-        </h3>
+        <h3>Just <b>GET</b> www.trumptweets.rest/api</h3>
+        <TweetAPIExample/>
       </Hero>
     </Header>
     <Contact px={4} py={6} justifyContent="center" alignItems="center" flexDirection="column">
-      <h2>Have feedback? Raise an issue at: </h2>
-      <h3><a href="https://github.com/casthewiz/trumptweets">github.com/casthewiz/trumptweets</a></h3>
+    <h3>Sourced from:
+      <a className='trump-twitter-archive' href="http://www.trumptwitterarchive.com">
+        &nbsp;Trump Twitter Archive
+      </a>
+    </h3>
+    <h3>Inspired by:
+      <a className='kanye-rest' href="http://kanye.rest">
+        &nbsp;kanye.rest
+      </a>
+    </h3>
+      <br/>
+      <h3>Have feedback? Raise an issue <a href="https://github.com/casthewiz/trumptweets"><b>here</b></a>.</h3>
     </Contact>
   </Layout>
 );
