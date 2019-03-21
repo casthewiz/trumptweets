@@ -17,17 +17,7 @@ const ExampleStyles = {
 
 class TweetAPIExample extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      tweet: {}
-    };
-  }
-
-  componentDidMount() {
-    console.log("Component Mount")
+  fetchTweet(){
     fetch("https://www.trumptweets.rest/api")
       .then(
         (res) => {
@@ -46,6 +36,20 @@ class TweetAPIExample extends React.Component {
           error
         }
       )
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      tweet: {}
+    };
+  }
+
+  componentDidMount() {
+    console.log("Component Mount")
+    this.fetchTweet()
   }
 
   render() {
@@ -64,7 +68,7 @@ class TweetAPIExample extends React.Component {
       )
     } else {
       return (
-        <ReactJson style={ ExampleStyles } src={tweet} theme={"summerfruit"}/>
+          <ReactJson enableClipboard={false} style={ ExampleStyles } src={tweet} theme={"summerfruit"}></ReactJson>
       )
     }
   }
